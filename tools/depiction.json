@@ -1,0 +1,59 @@
+{
+  "minVersion": "0.1",
+  "class": "DepictionTabView",
+  "tintColor": "#FF0033",
+  "tabs": [
+    {
+      "tabname": "Details",
+      "class": "DepictionStackView",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "YTHideProgress hides YouTube's progress bar while you are not using it, so it stops pulling your eye to how much is left.\n\n- **Player**: the line under the video goes away while the controls are hidden, in portrait and (optionally) landscape. Tap the video and it comes back with the controls.\n- **Miniplayer**: no line along the bottom of the floating player.\n- **Thumbnails**: removes the red watched bar, and optionally the video length.\n- **Picture in picture and Now Playing**: optional; leaves the progress bar and times out of picture in picture and the Lock Screen, Control Center and Dynamic Island players.\n- **Channels**: apply it to every channel, only the channels you list, or all except them. Add a channel from a video's menu; collaboration videos let you pick each channel.\n- **Player button**: with YTVideoOverlay, hide or show the progress for the video you're watching.\n\nSettings are in YouTube's settings, under YTHideProgress. Also works injected into a sideloaded YouTube app."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "%VERSION%"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "iOS 14 and later (rootless, roothide and rootful); tested with YouTube 20.42.3"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Developer",
+          "text": "GoldenAppleGuy"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Source Code",
+          "action": "https://github.com/GoldenAppleGuy/ythideprogress"
+        }
+      ]
+    },
+    {
+      "tabname": "Changelog",
+      "class": "DepictionStackView",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "1.0.0",
+          "useBoldText": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- First release."
+        }
+      ]
+    }
+  ]
+}

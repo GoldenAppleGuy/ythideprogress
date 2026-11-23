@@ -443,6 +443,19 @@ static void holdPeek(UIViewController *overlayVC, BOOL hold) {
     [containers() addObject:self];
     syncBar(self, kInCurrentAnimation);
 }
+// The bar's touch area (YTInlineScrubGestureView, about 44 pt over the bottom of the video)
+// stays live when the bar is invisible, so a tap there scrubs instead of showing the controls.
+// While the tweak hides the bar, touches meant for the bar go to the video underneath; the
+// container's other parts (buttons) are untouched.
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *hit = %orig;
+    if (!hit) return nil;
+    UIView *bar = barViewIn(self);
+    if (!bar || factorOf(bar) > 0) return hit;
+    Class scrub = objc_getClass("YTInlineScrubGestureView");
+    if (hit == self || hit == bar || [hit isDescendantOfView:bar] || (scrub && [hit isKindOfClass:scrub])) return nil;
+    return hit;
+}
 %end
 
 // --- The miniplayer ---

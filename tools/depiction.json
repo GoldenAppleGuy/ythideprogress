@@ -46,6 +46,15 @@
       "views": [
         {
           "class": "DepictionSubheaderView",
+          "title": "1.0.1",
+          "useBoldText": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- A tap on the bottom of the video, where the hidden bar sits, shows the controls instead of moving the playhead."
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "1.0.0",
           "useBoldText": true
         },
